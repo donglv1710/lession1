@@ -20,7 +20,7 @@ import { Child1Module } from './child1/child1.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    Child1Module,// you want use [(ngModule)] in Module child. You having add Module in appModule
+    Child1Module,// you want use [(ngModel)] in Module child. You having add Module in appModule
   ],
   providers: [],
   bootstrap: [AppComponent]
