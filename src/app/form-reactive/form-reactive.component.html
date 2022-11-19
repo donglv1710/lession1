@@ -1,0 +1,28 @@
+<p>form-reactive works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input 
+        type="text"
+        formControlName="username"
+    />
+    <input 
+        type="text"
+        formControlName="password"
+    />
+    <button type="submit">Login</button>
+</form>
+<p>Demo form array</p>
+
+<form [formGroup]="profileForm">
+    <div formArrayName="aliases">
+        <h2>Aliases</h2>
+        <button type="button" (click)="addAlias()">+ Add another alias</button>
+      
+        <div *ngFor="let alias of aliases.controls; let i=index">
+          <!-- The repeated alias template -->
+          <label for="alias-{{ i }}">Alias:</label>
+          <input id="alias-{{ i }}" type="text" [formControlName]="i">
+        </div>
+      </div>
+</form>
+

@@ -1,0 +1,16 @@
+<p>form-tempale works!</p>
+<form #f = "ngForm" (ngSubmit)="login(f.value)">
+    name:       <input 
+                    type="text"  
+                    ngModel
+                    name="username
+                    required
+                "/>
+            <br/>
+    password:  <input
+                    type="password"
+                    ngModel
+                    name="password"
+                />
+    <button type="submit" *ngIf="f.valid">login</button>
+</form>

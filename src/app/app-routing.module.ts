@@ -4,6 +4,8 @@ import { BindingEventComponent } from './binding-event/binding-event.component';
 import { BindingComponent } from './binding/binding.component';
 import { Child1RoutingModule } from './child1/child1-routing.module';
 import { Child1Component } from './child1/child1.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { FormTempaleComponent } from './form-tempale/form-tempale.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path: 'event', component:BindingEventComponent},
   {path: 'home', component:HomeComponent},
   {path: 'child1', loadChildren: ()=>Child1RoutingModule},
+  {path: 'form-template', component:FormTempaleComponent},
+  {path: 'form-reactive', component:FormReactiveComponent},
 ];
 
 @NgModule({
