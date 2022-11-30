@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 import { BindingEventComponent } from './binding-event/binding-event.component';
 import { BindingComponent } from './binding/binding.component';
 import { Child1RoutingModule } from './child1/child1-routing.module';
@@ -15,6 +16,19 @@ const routes: Routes = [
   {path: 'child1', loadChildren: ()=>Child1RoutingModule},
   {path: 'form-template', component:FormTempaleComponent},
   {path: 'form-reactive', component:FormReactiveComponent},
+  {
+    path: 'admin', 
+    component:AdminComponent,
+    children:
+    [
+      {path:'', redirectTo:"report",pathMatch:'full'},
+      {
+        path:'report',
+        loadChildren: ()=> import('./admin/report/report.module').then(m=>m.ReportModule)             
+      }
+     // {path:'', component:ReportComponent},
+    ]
+  },
 ];
 
 @NgModule({
